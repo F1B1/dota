@@ -1,0 +1,121 @@
+.icon {
+    fill: transparent;
+    stroke: var(--text-primary);
+    stroke-linecap: round;
+    stroke-width: 2px;
+}
+
+.left-up {
+    animation: 1.2s ease leftUp forwards;
+    will-change: transform;
+}
+
+.left-down {
+    animation: 1.2s ease leftDown forwards;
+    will-change: transform;
+}
+
+.right-up {
+    animation: 1.2s ease rightUp forwards;
+    will-change: transform;
+}
+
+.right-down {
+    animation: 1.2s ease rightDown forwards;
+    will-change: transform;
+}
+
+.top-up {
+    animation: 1.2s ease topUp forwards;
+    will-change: transform;
+}
+
+.top-down {
+    animation: 1.2s ease topDown forwards;
+    will-change: transform;
+}
+
+.scale-up {
+    animation: 1s ease scaleUp forwards;
+    will-change: transform;
+}
+
+.scale-down {
+    animation: 1s ease scaleDown forwards;
+    will-change: transform;
+}
+
+.p48 {
+    padding: #{fluid(24px, 48px, 375px, 1920px)};
+}
+
+.p32 {
+    padding: #{fluid(24px, 32px, 375px, 1920px)};
+}
+
+.section-b-120{
+    padding-bottom: #{fluid(32px, 120px, 375px, 1920px)};
+}
+
+.section-b-84{
+    padding-bottom: #{fluid(64px, 84px, 375px, 1920px)};
+}
+
+.section-b-48{
+    padding-bottom: 48px;
+}
+
+.section-t-48{
+    padding-top: #{fluid(36px, 48px, 375px, 1920px)};
+}
+
+.br40{
+    border-radius: 40px;
+}
+
+.br20{
+    border-radius: 20px;
+}
+
+.title-64 {
+    font-weight: 700;
+    font-size: #{fluid(36px, 64px, 375px, 1920px)};
+    line-height: 1;
+    letter-spacing: initial;
+}
+
+.title-40 {
+    font-weight: 700;
+    font-size: #{fluid(28px, 40px, 375px, 1920px)};
+    line-height: 1;
+    letter-spacing: initial;
+}
+
+.title-28 {
+    font-weight: 700;
+    font-size: #{fluid(24px, 28px, 375px, 1920px)};
+    line-height: 1;
+    letter-spacing: initial;
+}
+
+
+
+.title-center {
+    margin: 0 auto #{fluid(32px, 105px, 375px, 2560px)};
+    max-width: 60%;
+    text-align: center;
+
+    &-2{
+        max-width: 65%;
+    }
+
+    @include small-tablet {
+        max-width: 100%;
+    }
+}
+
+.section-first {
+    transition: padding var(--trans-second);
+}
+
+

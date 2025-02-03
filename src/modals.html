@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html')
+
+<body class="page__body">
+    <div class="site-container">
+        <main class="main">
+            <button class="header__count btn-gray btn-reset" data-click-btn=".modal-count" data-click-body="no-scrolling">
+                Рассчитать стоимость
+                <svg width="17" height="17">
+                    <use xlink:href="./img/sprite.svg#arrow-right"></use>
+                </svg>
+            </button>
+            <button class="header__count btn-gray btn-reset" data-click-btn=".modal-error" data-click-body="no-scrolling">
+                Ошибка
+                <svg width="17" height="17">
+                    <use xlink:href="./img/sprite.svg#arrow-right"></use>
+                </svg>
+            </button>
+            <button class="header__count btn-gray btn-reset" data-click-btn=".modal-thank" data-click-body="no-scrolling">
+                Благодарность
+                <svg width="17" height="17">
+                    <use xlink:href="./img/sprite.svg#arrow-right"></use>
+                </svg>
+            </button>
+            <button class="header__count btn-gray btn-reset" data-click-btn=".modal-card" data-click-body="no-scrolling">
+                Карточка товара
+                <svg width="17" height="17">
+                    <use xlink:href="./img/sprite.svg#arrow-right"></use>
+                </svg>
+            </button>
+        </main>
+
+        @include('partials/modals.html')
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,541 @@
+<!-- <div class="modal modal-count" data-click-section="modal__inner">
+    <div class="modal__inner br32">
+        <div class="modal__header">
+            <h2 class="modal__title title-52">Получите индивидуальное меню для вашего праздника в 2-х вариантах бюджета  </h2>
+            <p class="modal__text">Заполните данные и мы свяжемся с вами, уточним детали и подберем идеальное меню именно для вашего торжества.</p>
+        </div>
+
+        <form action="#" class="modal__form form-modal" id="form-modal">
+            <div class="form-modal__main">
+                <label class="form-modal__input input">
+                    <input type="text" name="name" id="name" placeholder="Имя*" required autocomplete="off">
+                </label>
+                <label class="form-modal__input input">
+                    <input class="is-phone" type="tel" name="phone" id="phone" placeholder="Телефон*" required>
+                </label>
+                <label class="form-modal__input textarea">
+                    <textarea name="text" placeholder="Комментарий"></textarea>
+                </label>
+            </div>
+
+            <fieldset class="form-modal__block">
+                <legend class="form-modal__caption">Предпочитаемый способ связи</legend>
+
+                <div class="form-modal__checkboxs">
+                    <label class="form-modal__input checkbox">
+                        <input type="checkbox" name="socials" value="phone" required autocomplete="off">
+                        <span class="checkbox__custom"></span>
+                        <span class="checkbox__text">
+                            Телефон
+                        </span>
+                    </label>
+                    <label class="form-modal__input checkbox">
+                        <input type="checkbox" name="socials" value="whatsApp" required autocomplete="off">
+                        <span class="checkbox__custom"></span>
+                        <span class="checkbox__text">
+                            WhatsApp
+                        </span>
+                    </label>
+                </div>
+            </fieldset>
+
+            <button type="submit" class="form-modal__send btn btn-primary is-red btn-reset">
+                Заказать расчет
+                <svg width="24" height="24">
+                    <use xlink:href="./img/sprite.svg#arrow-right"></use>
+                </svg>
+            </button>
+            <label class="form-modal__input checkbox">
+                <input type="checkbox" name="agreement" value="agreement" checked required autocomplete="off">
+                <span class="checkbox__custom"></span>
+                <p class="form-modal__terms">Нажимая кнопку, вы соглашаетесь с <a href="#">политикой обработки персональных данных</a></p>
+            </label>
+        </form>
+
+        <button type="button" class="modal__close btn-reset" aria-label="Закрыть окно" data-click-close>
+            <svg width="24" height="24">
+                <use xlink:href="./img/sprite.svg#close"></use>
+            </svg>
+        </button>
+    </div>
+</div>
+
+<div class="modal modal-error" data-click-section="modal__inner">
+    <div class="modal__inner f-c br32">
+        <div class="modal__body">
+            <div class="modal__icon">
+                <img src="./img/donut.svg" alt="Изображение" width="80" height="80" loading="lazy">
+            </div>
+            <h2 class="modal__title title-52">Произошла ошибка при отправке формы.</h2>
+            <p class="modal__text">Пожалуйста, проверьте введённые данные и попробуйте снова. Если ошибка повторится, свяжитесь с нами по телефону или через WhatsApp.</p>
+            <button class="modal__button close-btn btn btn-reset" aria-label="Закрыть окно" data-click-close>хорошо</button>
+        </div>
+
+
+        <button type="button" class="modal__close btn-reset" aria-label="Закрыть окно" data-click-close>
+            <svg width="24" height="24">
+                <use xlink:href="./img/sprite.svg#close"></use>
+            </svg>
+        </button>
+    </div>
+</div>
+
+<div class="modal modal-thank" data-click-section="modal__inner">
+    <div class="modal__inner f-c br32">
+        <div class="modal__body">
+            <div class="modal__icon">
+                <img src="./img/confetti.svg" alt="Изображение" width="80" height="80" loading="lazy">
+            </div>
+            <h2 class="modal__title title-52">Спасибо! Ваш заказ <br> успешно оформлен.</h2>
+            <p class="modal__text">Наш менеджер свяжется с вами в ближайшее время, чтобы обсудить все детали.</p>
+            <button class="modal__button close-btn btn btn-reset" aria-label="Закрыть окно" data-click-close>хорошо</button>
+        </div>
+
+
+        <button type="button" class="modal__close btn-reset" aria-label="Закрыть окно" data-click-close>
+            <svg width="24" height="24">
+                <use xlink:href="./img/sprite.svg#close"></use>
+            </svg>
+        </button>
+    </div>
+</div>
+
+<div class="modal modal-card" data-click-section="modal__inner">
+    <div class="modal__inner br32">
+        <div class="modal-card__wrapper">
+            <div class="modal-card__body">
+                <div class="modal-card__swiper swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide br32 p52">
+                            <ul class="list__item list-reset">
+                                <li>
+                                    <svg width="24" height="24">
+                                        <use xlink:href="./img/sprite.svg#hot"></use>
+                                    </svg>
+                                    Хит продаж
+                                </li>
+                                <li>
+                                    <svg width="24" height="24">
+                                        <use xlink:href="./img/sprite.svg#box"></use>
+                                    </svg>
+                                    750 грамм
+                                </li>
+                                <li>
+                                    <svg width="24" height="24">
+                                        <use xlink:href="./img/sprite.svg#count"></use>
+                                    </svg>
+                                    36 штук
+                                </li>
+                            </ul>
+                            <div class="modal-card__image">
+                                <img src="./img/product01.webp" alt="карточка товара" width="500" height="371" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="swiper-slide br32 p52">
+                            <ul class="list__item list-reset">
+                                <li>
+                                    <svg width="24" height="24">
+                                        <use xlink:href="./img/sprite.svg#hot"></use>
+                                    </svg>
+                                    Хит продаж
+                                </li>
+                                <li>
+                                    <svg width="24" height="24">
+                                        <use xlink:href="./img/sprite.svg#box"></use>
+                                    </svg>
+                                    750 грамм
+                                </li>
+                                <li>
+                                    <svg width="24" height="24">
+                                        <use xlink:href="./img/sprite.svg#count"></use>
+                                    </svg>
+                                    36 штук
+                                </li>
+                            </ul>
+                            <div class="modal-card__image">
+                                <img src="./img/image-2.webp" alt="карточка товара" width="500" height="371" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="swiper-slide br32 p52">
+                            <ul class="list__item list-reset">
+                                <li>
+                                    <svg width="24" height="24">
+                                        <use xlink:href="./img/sprite.svg#hot"></use>
+                                    </svg>
+                                    Хит продаж
+                                </li>
+                                <li>
+                                    <svg width="24" height="24">
+                                        <use xlink:href="./img/sprite.svg#box"></use>
+                                    </svg>
+                                    750 грамм
+                                </li>
+                                <li>
+                                    <svg width="24" height="24">
+                                        <use xlink:href="./img/sprite.svg#count"></use>
+                                    </svg>
+                                    36 штук
+                                </li>
+                            </ul>
+                            <div class="modal-card__image">
+                                <img src="./img/image-3.webp" alt="карточка товара" width="500" height="371" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-card__pagination num-pagination swiper-pagination"></div>
+                </div>
+                <div class="modal-card__content">
+                    <small>Артикул №123456789</small>
+                    <h3>Платтер праздничных закусок «Рыбный», L</h3>
+                    <p>Рыбные деликатесы, ассорти икры и морепродуктов в сочетании с разнообразными топпингами для вашей вечеринки.</p>
+                    <div class="modal-card__count">
+                        <div class="modal-card__block">
+                            <p class="modal-card__price"><span>3 990</span>руб.</p>
+                            <ul class="list__item list-reset">
+                                <li>
+                                    <svg width="24" height="24">
+                                        <use xlink:href="./img/sprite.svg#ruble"></use>
+                                    </svg>
+                                    997.5 на чел
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="quantity-controls">
+                            <button class="decrement btn-reset"></button>
+                            <div class="quantity-display">
+                                <span class="quantity-number">1</span> шт
+                            </div>
+                            <button class="increment btn-reset"></button>
+                        </div>
+                    </div>
+                    <button class="modal-card__button btn btn-reset btn-primary is-red">в корзину</button>
+                    <div>
+                        <h4>Ассорти тарталеток:</h4>
+                        <ul>
+                            <li>Риет из лосося с мидией — 6шт;</li>
+                            <li>Икра палтуса с огурцом — 6шт;</li>
+                            <li>Икра лососевая — 6шт;</li>
+                            <li>Тигровая креветка — 6шт;</li>
+                            <li>Лосось с творожным сыром — 6шт.</li>
+                            <li>Лосось с творожным сыром — 6шт.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-card__body modal-card__like like-card">
+                <div class="like-card__controls">
+                    <h2 class="like-card__title title-52">Вам также могут понравиться похожие закуски:</h2>
+                    <div class="reviews__buttons d-flex">
+                        <button class="like-card__prev slider-btn-prev swiper-button-prev btn-reset d-flex f-c">
+                            <svg width="24" height="24">
+                                <use xlink:href="./img/sprite.svg#arrow-left"></use>
+                            </svg>
+                        </button>
+                        <button class="like-card__next slider-btn-next swiper-button-next btn-reset d-flex f-c">
+                            <svg width="24" height="24">
+                                <use xlink:href="./img/sprite.svg#arrow-right"></use>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="like-card__swiper swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="catalog__card br32">
+                                <div class="catalog__image br32">
+                                    <img src="./img/image-1.webp" alt="img">
+                                    <ul class="list__item list-reset p52">
+                                        <li>
+                                            <svg width="24" height="24">
+                                                <use xlink:href="./img/sprite.svg#hot"></use>
+                                            </svg>
+                                            Хит продаж
+                                        </li>
+                                        <li class="catalog__list-show">
+                                            3+
+                                        </li>
+                                        <li>
+                                            <svg width="24" height="24">
+                                                <use xlink:href="./img/sprite.svg#group"></use>
+                                            </svg>
+                                            На 3-4 человека
+                                        </li>
+                                        <li>
+                                            <svg width="24" height="24">
+                                                <use xlink:href="./img/sprite.svg#ruble"></use>
+                                            </svg>
+                                            997,5 на чел
+                                        </li>
+                                        <li>
+                                            <svg width="24" height="24">
+                                                <use xlink:href="./img/sprite.svg#count"></use>
+                                            </svg>
+                                            36 штук
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="catalog__item p36">
+                                    <a href="#"><h3>Платтер праздничных закусок «Рыбный», L</h3></a>
+                                    <p>3 990 руб.</p>
+                                    <button class="catalog__button btn btn-reset btn-primary is-red">в корзину</button>
+                                    <div class="quantity-controls">
+                                        <button class="decrement btn-reset"></button>
+                                            <div class="quantity-display">
+                                            <span class="quantity-number">1</span> шт
+                                        </div>
+                                        <button class="increment btn-reset"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="catalog__card br32">
+                                <div class="catalog__image br32">
+                                    <img src="./img/image-1.webp" alt="img">
+                                    <ul class="list__item list-reset p52">
+                                        <li>
+                                            <svg width="24" height="24">
+                                                <use xlink:href="./img/sprite.svg#hot"></use>
+                                            </svg>
+                                            Хит продаж
+                                        </li>
+                                        <li class="catalog__list-show">
+                                            3+
+                                        </li>
+                                        <li>
+                                            <svg width="24" height="24">
+                                                <use xlink:href="./img/sprite.svg#group"></use>
+                                            </svg>
+                                            На 3-4 человека
+                                        </li>
+                                        <li>
+                                            <svg width="24" height="24">
+                                                <use xlink:href="./img/sprite.svg#ruble"></use>
+                                            </svg>
+                                            997,5 на чел
+                                        </li>
+                                        <li>
+                                            <svg width="24" height="24">
+                                                <use xlink:href="./img/sprite.svg#count"></use>
+                                            </svg>
+                                            36 штук
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="catalog__item p36">
+                                    <a href="#"><h3>Платтер праздничных закусок «Рыбный», L</h3></a>
+                                    <p>3 990 руб.</p>
+                                    <button class="catalog__button btn btn-reset btn-primary is-red">в корзину</button>
+                                    <div class="quantity-controls">
+                                        <button class="decrement btn-reset"></button>
+                                            <div class="quantity-display">
+                                            <span class="quantity-number">1</span> шт
+                                        </div>
+                                        <button class="increment btn-reset"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="catalog__card br32">
+                                <div class="catalog__image br32">
+                                    <img src="./img/image-1.webp" alt="img">
+                                    <ul class="list__item list-reset p52">
+                                        <li>
+                                            <svg width="24" height="24">
+                                                <use xlink:href="./img/sprite.svg#hot"></use>
+                                            </svg>
+                                            Хит продаж
+                                        </li>
+                                        <li class="catalog__list-show">
+                                            3+
+                                        </li>
+                                        <li>
+                                            <svg width="24" height="24">
+                                                <use xlink:href="./img/sprite.svg#group"></use>
+                                            </svg>
+                                            На 3-4 человека
+                                        </li>
+                                        <li>
+                                            <svg width="24" height="24">
+                                                <use xlink:href="./img/sprite.svg#ruble"></use>
+                                            </svg>
+                                            997,5 на чел
+                                        </li>
+                                        <li>
+                                            <svg width="24" height="24">
+                                                <use xlink:href="./img/sprite.svg#count"></use>
+                                            </svg>
+                                            36 штук
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="catalog__item p36">
+                                    <a href="#"><h3>Платтер праздничных закусок «Рыбный», L</h3></a>
+                                    <p>3 990 руб.</p>
+                                    <button class="catalog__button btn btn-reset btn-primary is-red">в корзину</button>
+                                    <div class="quantity-controls">
+                                        <button class="decrement btn-reset"></button>
+                                            <div class="quantity-display">
+                                            <span class="quantity-number">1</span> шт
+                                        </div>
+                                        <button class="increment btn-reset"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="catalog__card br32">
+                                <div class="catalog__image br32">
+                                    <img src="./img/image-1.webp" alt="img">
+                                    <ul class="list__item list-reset p52">
+                                        <li>
+                                            <svg width="24" height="24">
+                                                <use xlink:href="./img/sprite.svg#hot"></use>
+                                            </svg>
+                                            Хит продаж
+                                        </li>
+                                        <li class="catalog__list-show">
+                                            3+
+                                        </li>
+                                        <li>
+                                            <svg width="24" height="24">
+                                                <use xlink:href="./img/sprite.svg#group"></use>
+                                            </svg>
+                                            На 3-4 человека
+                                        </li>
+                                        <li>
+                                            <svg width="24" height="24">
+                                                <use xlink:href="./img/sprite.svg#ruble"></use>
+                                            </svg>
+                                            997,5 на чел
+                                        </li>
+                                        <li>
+                                            <svg width="24" height="24">
+                                                <use xlink:href="./img/sprite.svg#count"></use>
+                                            </svg>
+                                            36 штук
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="catalog__item p36">
+                                    <a href="#"><h3>Платтер праздничных закусок «Рыбный», L</h3></a>
+                                    <p>3 990 руб.</p>
+                                    <button class="catalog__button btn btn-reset btn-primary is-red">в корзину</button>
+                                    <div class="quantity-controls">
+                                        <button class="decrement btn-reset"></button>
+                                            <div class="quantity-display">
+                                            <span class="quantity-number">1</span> шт
+                                        </div>
+                                        <button class="increment btn-reset"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="catalog__card br32">
+                                <div class="catalog__image br32">
+                                    <img src="./img/image-1.webp" alt="img">
+                                    <ul class="list__item list-reset p52">
+                                        <li>
+                                            <svg width="24" height="24">
+                                                <use xlink:href="./img/sprite.svg#hot"></use>
+                                            </svg>
+                                            Хит продаж
+                                        </li>
+                                        <li class="catalog__list-show">
+                                            3+
+                                        </li>
+                                        <li>
+                                            <svg width="24" height="24">
+                                                <use xlink:href="./img/sprite.svg#group"></use>
+                                            </svg>
+                                            На 3-4 человека
+                                        </li>
+                                        <li>
+                                            <svg width="24" height="24">
+                                                <use xlink:href="./img/sprite.svg#ruble"></use>
+                                            </svg>
+                                            997,5 на чел
+                                        </li>
+                                        <li>
+                                            <svg width="24" height="24">
+                                                <use xlink:href="./img/sprite.svg#count"></use>
+                                            </svg>
+                                            36 штук
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="catalog__item p36">
+                                    <a href="#"><h3>Платтер праздничных закусок «Рыбный», L</h3></a>
+                                    <p>3 990 руб.</p>
+                                    <button class="catalog__button btn btn-reset btn-primary is-red">в корзину</button>
+                                    <div class="quantity-controls">
+                                        <button class="decrement btn-reset"></button>
+                                            <div class="quantity-display">
+                                            <span class="quantity-number">1</span> шт
+                                        </div>
+                                        <button class="increment btn-reset"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="catalog__card br32">
+                                <div class="catalog__image br32">
+                                    <img src="./img/image-1.webp" alt="img">
+                                    <ul class="list__item list-reset p52">
+                                        <li>
+                                            <svg width="24" height="24">
+                                                <use xlink:href="./img/sprite.svg#hot"></use>
+                                            </svg>
+                                            Хит продаж
+                                        </li>
+                                        <li class="catalog__list-show">
+                                            3+
+                                        </li>
+                                        <li>
+                                            <svg width="24" height="24">
+                                                <use xlink:href="./img/sprite.svg#group"></use>
+                                            </svg>
+                                            На 3-4 человека
+                                        </li>
+                                        <li>
+                                            <svg width="24" height="24">
+                                                <use xlink:href="./img/sprite.svg#ruble"></use>
+                                            </svg>
+                                            997,5 на чел
+                                        </li>
+                                        <li>
+                                            <svg width="24" height="24">
+                                                <use xlink:href="./img/sprite.svg#count"></use>
+                                            </svg>
+                                            36 штук
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="catalog__item p36">
+                                    <a href="#"><h3>Платтер праздничных закусок «Рыбный», L</h3></a>
+                                    <p>3 990 руб.</p>
+                                    <button class="catalog__button btn btn-reset btn-primary is-red">в корзину</button>
+                                    <div class="quantity-controls">
+                                        <button class="decrement btn-reset"></button>
+                                            <div class="quantity-display">
+                                            <span class="quantity-number">1</span> шт
+                                        </div>
+                                        <button class="increment btn-reset"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="button" class="modal__close btn-reset" aria-label="Закрыть окно" data-click-close>
+            <svg width="24" height="24">
+                <use xlink:href="./img/sprite.svg#close"></use>
+            </svg>
+        </button>
+    </div>
+</div> -->

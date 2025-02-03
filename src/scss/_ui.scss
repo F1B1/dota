@@ -1,0 +1,289 @@
+/* stylelint-disable */
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1;
+
+    &.disabled,
+    &:disabled {
+        opacity: 0.5;
+        pointer-events: none;
+        user-select: none;
+    }
+}
+
+.btn-black{
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    svg{
+        fill{
+            color: var(--text-primary);
+        }
+    }
+}
+
+.btn-orange{
+    background-color: var(--bg-orange);
+    color: var(--bg-primary);
+    svg{
+        fill{
+            color: var(--bg-primary);
+        }
+    }
+}
+
+
+
+
+
+.input,
+.textarea {
+    width: 100%;
+
+    input,
+    textarea {
+        border: 1px solid transparent;
+        border-radius: #{fluid(20px, 32px, 1920px, 2560px)};
+        padding: #{fluid(22px, 37px, 1920px, 2560px)} #{fluid(20px, 32px, 1920px, 2560px)};
+        width: 100%;
+        font-family: var(--font-family);
+        font-weight: 500;
+        font-variant-numeric: lining-nums;
+        font-size: #{fluid(20px, 32px, 1920px, 2560px)};
+        line-height: 1.3;
+        letter-spacing: -0.02em;
+        background-color: var(--text-secondary);
+        transition: border var(--trans);
+
+        @include big-desktop {
+            padding: #{fluid(14px, 22px, 768px, 1600px)} #{fluid(14px, 20px, 768px, 1600px)};
+            font-size: #{fluid(14px, 20px, 768px, 1600px)};
+        }
+
+        @include tablet {
+            border-radius: 8px;
+        }
+
+        &::placeholder {
+            color: var(--text-gray);
+            opacity: 1;
+        }
+
+        &:hover {
+            border-color: var(--text-gray);
+        }
+
+        &:focus {
+            outline: none;
+            border-color: var(--text-primary);
+        }
+    }
+
+    textarea {
+        resize: none;
+    }
+
+    .is-error input,
+    .is-error textarea {
+        border-color: var(--text-accent);
+    }
+}
+
+.input-white{
+    input, textarea{
+        color: var(--text-secondary);
+        background-color: var(--light-red);
+
+        &:hover, &:focus{
+            border-color: var(--text-secondary);
+        }
+
+        &::placeholder{
+            color: var(--input-white);
+        }
+    }
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: #{fluid(8px, 13px, 1920px, 2560px)};
+
+    @include mobile {
+        gap: 6px;
+    }
+
+    input {
+        position: absolute;
+        opacity: 0;
+    }
+
+    &__custom {
+        position: relative;
+        flex: 0 0 #{fluid(24px, 32px, 1920px, 2560px)};
+        border: 2px solid var(--text-gray);
+        border-radius: 8px;
+        width: #{fluid(24px, 32px, 1920px, 2560px)};
+        height: #{fluid(24px, 32px, 1920px, 2560px)};
+        transition:
+            background var(--trans),
+            border var(--trans);
+
+        @include tablet {
+            border-width: 1px;
+            border-radius: 5px;
+        }
+
+        @include small-tablet {
+            flex: 0 0 20px;
+            border-radius: 5px;
+            width: 20px;
+            height: 20px;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 80%;
+            height: 80%;
+            background-image: url('../img/check.svg');
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transform: translate(-50%, -50%);
+            transition: opacity var(--trans);
+        }
+    }
+
+    &__text {
+        font-weight: 500;
+        font-size: #{fluid(20px, 32px, 1920px, 2560px)};
+        line-height: 1.3;
+        color: var(--text-gray);
+        transition: color var(--trans);
+
+        @include big-desktop {
+            font-size: #{fluid(14px, 20px, 768px, 1600px)};
+        }
+    }
+
+    input:checked ~ &__custom {
+        border-color: var(--text-primary);
+        background-color: var(--text-primary);
+
+        &::after {
+            opacity: 1;
+        }
+    }
+
+    input:checked ~ &__text {
+        color: var(--text-primary);
+    }
+}
+
+.quantity-controls {
+    display: none;
+    align-items:center;
+    justify-content: space-between;
+    border-radius: #{fluid(16px, 24px, 1920px, 2560px)};
+    padding: 8px;
+    min-height: #{fluid(60px, 90px, 1920px, 2560px)};
+    background-color: var(--text-secondary);
+
+    button{
+        display: flex;
+        align-items: center;
+        justify-content:center;
+        border-radius: #{fluid(12px, 18px, 1920px, 2560px)};
+        width: #{fluid(42px, 64px, 1920px, 2560px)};
+        height: #{fluid(42px, 64px, 1920px, 2560px)};
+        font-size: #{fluid(40px, 64px, 1920px, 2560px)};
+        line-height: 1;
+        color: var(--text-secondary);
+        background-color: rgba(153, 153, 153, 1);
+        transition: all 0.3s ease 0s;
+
+        @include big-desktop{
+            width: #{fluid(32px, 42px, 375px, 1600px)};
+            height: #{fluid(32px, 42px, 375px, 1600px)};
+        }
+
+        @include small-tablet{
+            border-radius: 8px;
+        }
+    }
+
+    &:hover{
+        button{
+            background-color: var(--text-primary);
+        }
+    }
+
+    &.show{
+        display: flex;
+    }
+
+    @include big-desktop {
+        min-height: #{fluid(48px, 60px, 375px, 1600px)};
+    }
+}
+
+.decrement {
+    position: relative;
+
+    &::after{
+        content:'';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        border-radius: 16px;
+        width: #{fluid(14px, 24px, 1920px, 2560px)};
+        height: #{fluid(4px, 6px, 1920px, 2560px)};
+        background-color: var(--text-secondary);
+        transform: translate(-50%, -50%);
+    }
+}
+
+.quantity-display {
+    display: flex;
+    font-weight: 600;
+    line-height: 1;
+    text-transform: uppercase;
+    gap: #{fluid(3px, 7px, 1920px, 2560px)};
+}
+
+.increment {
+    position: relative;
+
+    &::after{
+        content:'';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        border-radius: 16px;
+        width: #{fluid(14px, 24px, 1920px, 2560px)};
+        height: #{fluid(4px, 6px, 1920px, 2560px)};
+        background-color: var(--text-secondary);
+        transform: translate(-50%, -50%);
+    }
+
+    &::before{
+        content:'';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        border-radius: 16px;
+        width: #{fluid(14px, 24px, 1920px, 2560px)};
+        height: #{fluid(4px, 6px, 1920px, 2560px)};
+        background-color: var(--text-secondary);
+        transform: translate(-50%, -50%) rotate(90deg);
+    }
+}
