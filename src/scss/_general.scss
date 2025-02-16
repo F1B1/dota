@@ -69,6 +69,10 @@
     padding-top: #{fluid(36px, 48px, 375px, 1920px)};
 }
 
+.section-first{
+    padding-top: 123px;
+}
+
 .br40{
     border-radius: 40px;
 }
@@ -79,9 +83,12 @@
 
 .title-64 {
     font-weight: 700;
-    font-size: #{fluid(36px, 64px, 375px, 1920px)};
+    font-size: #{fluid(56px, 64px, 768px, 1920px)};
     line-height: 1;
     letter-spacing: initial;
+    @include small-tablet{
+        font-size: #{fluid(36px, 56px, 375px, 768px)};
+    }
 }
 
 .title-40 {
@@ -97,8 +104,6 @@
     line-height: 1;
     letter-spacing: initial;
 }
-
-
 
 .title-center {
     margin: 0 auto #{fluid(32px, 105px, 375px, 2560px)};

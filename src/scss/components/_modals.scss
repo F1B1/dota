@@ -37,9 +37,6 @@
         transition: transform var(--trans);
         gap: #{fluid(120px, 192px, 1920px, 2560px)};
 
-        @include ultra-desktop {
-            max-width: 1268px;
-        }
 
         @include big-desktop {
             gap: 72px;
@@ -71,11 +68,6 @@
         display: flex;
         flex-direction: column;
         width: 40%;
-
-        @include ultra-desktop {
-            width: 100%;
-            max-width: 400px;
-        }
 
         @include big-desktop {
             min-width: 350px;
@@ -118,10 +110,6 @@
     &__form {
         width: 60%;
 
-        @include ultra-desktop {
-            width: 100%;
-            max-width: 600px;
-        }
 
         @include big-desktop {
             flex: 1 1 auto;
@@ -371,10 +359,6 @@
             font-size: #{fluid(32px, 52px, 1920px, 2560px)};
             line-height: 1.2;
             letter-spacing: initial;
-
-            @include ultra-desktop {
-                line-height: 1.1;
-            }
 
             @include big-desktop {
                 font-size: #{fluid(22px, 32px, 768px, 1600px)};

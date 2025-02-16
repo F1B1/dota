@@ -133,353 +133,36 @@ const setSwipers = () => {
   const tablet = matchMedia('(max-width: 1024px)');
   const minTablet = matchMedia('(min-width: 1023px)');
 
-  // let sliderThumbs = new Swiper(".slider__thumbs", {
-  //     slidesPerView: 'auto',
-  //     freeMode: true,
-  //     watchSlidesProgress: true,
-  //     breakpoints: {
-  //         320: {
-  //             spaceBetween: 4,
-  //         },
-  //         768: {
-  //             spaceBetween: 10,
-  //         },
-  //     },
+  // let previweSwiper = new Swiper(".preview__swiper", {
+  //     slidesPerView: 'auto'
   //   });
-  let sliderThumbs = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".slider__thumbs", {
-    slidesPerView: 'auto',
-    freeMode: true,
-    watchSlidesProgress: true,
-    breakpoints: {
-      320: {
-        spaceBetween: 4
-      },
-      768: {
-        spaceBetween: 10
-      }
-    }
-  });
-  new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.slider__swiper', {
-    slidesPerView: 'auto',
-    effect: "coverflow",
-    grabCursor: true,
-    centeredSlides: true,
-    initialSlide: 2,
-    loop: true,
-    autoplay: {
-      delay: 5000
-    },
-    coverflowEffect: {
-      rotate: 0,
-      stretch: 0,
-      depth: 200,
-      modifier: 3,
-      slideShadows: true
-    },
-    breakpoints: {
-      320: {
-        spaceBetween: 12
-      },
-      768: {
-        spaceBetween: 36
-      },
-      1920: {
-        spaceBetween: 56
-      }
-    }
-  });
-  new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.preview__swiper', {
-    loop: true,
-    spaceBetween: 30,
-    effect: "fade",
-    autoplay: {
-      delay: 6000
-    },
-    pagination: {
-      el: '.preview__pagination',
-      clickable: true,
-      renderBullet: function (index, className) {
-        return '<span class="' + className + '">' + '0' + (index + 1) + "</span>";
-      }
-    }
-  });
-  new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.advantages__swiper', {
-    slidesPerView: 'auto',
-    centeredSlides: true,
-    breakpoints: {
-      320: {
-        spaceBetween: 12,
-        initialSlide: 0
-      },
-      768: {
-        initialSlide: 1,
-        spaceBetween: 36
-      },
-      1920: {
-        initialSlide: 1,
-        spaceBetween: 56
-      }
-    }
-  });
-  new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.reviews__swiper', {
-    slidesPerView: 'auto',
-    spaceBetween: 8,
-    autoplay: {
-      delay: 6000
-    },
-    pagination: {
-      el: '.reviews__pagination',
-      clickable: true,
-      type: 'custom',
-      renderCustom: function (swiper, current, total) {
-        let currentNum = current >= 10 ? current : `0${current}`;
-        let totalNum = total >= 10 ? total : `0${total}`;
-        return `${currentNum} / ${totalNum}`;
-      }
-    },
-    navigation: {
-      nextEl: '.reviews__next',
-      prevEl: '.reviews__prev'
-    }
-  });
-  new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.discount__swiper', {
-    slidesPerView: 'auto',
-    spaceBetween: 8,
-    autoplay: {
-      delay: 6000
-    },
-    pagination: {
-      el: '.discount__pagination',
-      clickable: true,
-      type: 'custom',
-      renderCustom: function (swiper, current, total) {
-        let currentNum = current >= 10 ? current : `0${current}`;
-        let totalNum = total >= 10 ? total : `0${total}`;
-        return `${currentNum} / ${totalNum}`;
-      }
-    },
-    navigation: {
-      nextEl: '.discount__next',
-      prevEl: '.discount__prev'
-    }
-  });
-  new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.modal-card__swiper', {
-    slidesPerView: 'auto',
-    loop: true,
-    spaceBetween: 30,
-    effect: "fade",
-    // autoplay: {
-    //     delay: 6000,
-    // },
-    pagination: {
-      el: '.modal-card__pagination',
-      clickable: true,
-      renderBullet: function (index, className) {
-        return '<span class="' + className + '">' + '0' + (index + 1) + "</span>";
-      }
-    }
-  });
-  new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.similar__swiper', {
-    slidesPerView: 'auto',
-    spaceBetween: 8,
-    autoplay: {
-      delay: 6000
-    },
-    pagination: {
-      el: '.similar__pagination',
-      clickable: true,
-      type: 'custom',
-      renderCustom: function (swiper, current, total) {
-        let currentNum = current >= 10 ? current : `0${current}`;
-        let totalNum = total >= 10 ? total : `0${total}`;
-        return `${currentNum} / ${totalNum}`;
-      }
-    },
-    navigation: {
-      nextEl: '.similar__next',
-      prevEl: '.similar__prev'
-    }
-  });
-  new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.like-card__swiper', {
-    slidesPerView: 'auto',
-    spaceBetween: 8,
-    navigation: {
-      nextEl: '.like-card__next',
-      prevEl: '.like-card__prev'
-    }
-  });
-  new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.tabs__swiper', {
-    loop: true,
-    spaceBetween: 30,
-    effect: "fade",
-    autoplay: {
-      delay: 6000
-    },
-    pagination: {
-      el: '.tabs__pagination',
-      clickable: true,
-      renderBullet: function (index, className) {
-        return '<span class="' + className + '">' + '0' + (index + 1) + "</span>";
-      }
-    }
-  });
-  new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.certificate__swiper', {
-    slidesPerView: 'auto',
-    centeredSlides: true,
-    breakpoints: {
-      320: {
-        spaceBetween: 8
-      },
-      768: {
-        spaceBetween: 24
-      },
-      1920: {
-        spaceBetween: 36
-      }
-    }
-  });
-  const navSubmenu = document.querySelectorAll('.nav__submenu');
-  const eventsList = document.querySelectorAll('.events__swiper');
-  let necessitySwiper = null;
-  let teamSwiper = null;
-  let eventsSwiper = [];
-  let specialSwiper = null;
-  let comfortSwiper = null;
-  let lookSwiper = null;
+
   let uniqueSwiper = null;
   const startResizeFunc = () => {
     if (tablet.matches) {
-      lookSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.look__swiper', {
-        slidesPerView: 'auto',
-        spaceBetween: 4
-      });
-      necessitySwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.necessity__swiper', {
-        slidesPerView: 'auto',
-        spaceBetween: 8
-      });
-      teamSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.team__swiper', {
-        slidesPerView: 'auto',
-        spaceBetween: 8
-      });
-      uniqueSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.unique__images', {
-        slidesPerView: 'auto',
-        spaceBetween: 8
-      });
+      // lookSwiper = new Swiper('.look__swiper', {
+      //     slidesPerView: 'auto',
+      //     spaceBetween: 4,
+      // });
     } else {
-      if (necessitySwiper) {
-        necessitySwiper.destroy();
-        necessitySwiper = null;
-      }
-      if (teamSwiper) {
-        teamSwiper.destroy();
-        teamSwiper = null;
-      }
-      if (lookSwiper) {
-        lookSwiper.destroy();
-        lookSwiper = null;
-      }
-      if (uniqueSwiper) {
-        uniqueSwiper.destroy();
-        uniqueSwiper = null;
-      }
-    }
-    if (smallTablet.matches) {
-      eventsList.forEach(item => {
-        eventsSwiper.push(new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](item, {
-          slidesPerView: 'auto',
-          spaceBetween: 8
-        }));
-      });
-      specialSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.special__swiper', {
-        slidesPerView: 'auto',
-        spaceBetween: 8
-      });
-      comfortSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.comfort__swiper', {
-        slidesPerView: 'auto',
-        spaceBetween: 8
-      });
-    } else {
-      eventsSwiper.forEach((item, i) => {
-        item.destroy();
-      });
-      eventsSwiper = [];
-      if (specialSwiper) {
-        specialSwiper.destroy();
-        specialSwiper = null;
-      }
-      if (comfortSwiper) {
-        comfortSwiper.destroy();
-        comfortSwiper = null;
-      }
+      // if (necessitySwiper) {
+      //     necessitySwiper.destroy();
+      //     necessitySwiper = null;
+      // }
     }
   };
   startResizeFunc();
   tablet.addEventListener('change', () => {
     if (tablet.matches) {
-      necessitySwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.necessity__swiper', {
-        slidesPerView: 'auto',
-        spaceBetween: 8
-      });
-      teamSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.team__swiper', {
-        slidesPerView: 'auto',
-        spaceBetween: 8
-      });
-      lookSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.look__swiper', {
-        slidesPerView: 'auto',
-        spaceBetween: 4
-      });
-      uniqueSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.unique__images', {
-        slidesPerView: 'auto',
-        spaceBetween: 8
-      });
+      // necessitySwiper = new Swiper('.necessity__swiper', {
+      //     slidesPerView: 'auto',
+      //     spaceBetween: 8,
+      // });
     } else {
-      if (necessitySwiper) {
-        necessitySwiper.destroy();
-        necessitySwiper = null;
-      }
-      if (teamSwiper) {
-        teamSwiper.destroy();
-        teamSwiper = null;
-      }
-      if (lookSwiper) {
-        lookSwiper.destroy();
-        lookSwiper = null;
-      }
-      if (uniqueSwiper) {
-        uniqueSwiper.destroy();
-        uniqueSwiper = null;
-      }
-    }
-  });
-  smallTablet.addEventListener('change', () => {
-    if (smallTablet.matches) {
-      eventsList.forEach(item => {
-        eventsSwiper.push(new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](item, {
-          slidesPerView: 'auto',
-          spaceBetween: 8
-        }));
-      });
-      specialSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.special__swiper', {
-        slidesPerView: 'auto',
-        spaceBetween: 8
-      });
-      comfortSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.comfort__swiper', {
-        slidesPerView: 'auto',
-        spaceBetween: 8
-      });
-    } else {
-      eventsSwiper.forEach((item, i) => {
-        item.destroy();
-      });
-      eventsSwiper = [];
-      if (specialSwiper) {
-        specialSwiper.destroy();
-        specialSwiper = null;
-      }
-      if (comfortSwiper) {
-        comfortSwiper.destroy();
-        comfortSwiper = null;
-      }
+      // if (necessitySwiper) {
+      //     necessitySwiper.destroy();
+      //     necessitySwiper = null;
+      // }
     }
   });
 };
@@ -556,6 +239,63 @@ function applyMask(id) {
     });
   });
 }
+
+/***/ }),
+
+/***/ "./src/js/functions/dropdownSelect.js":
+/*!********************************************!*\
+  !*** ./src/js/functions/dropdownSelect.js ***!
+  \********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   dropdownSelect: () => (/* binding */ dropdownSelect)
+/* harmony export */ });
+const dropdownSelect = () => {
+  const dropdowns = document.querySelectorAll('.dropdown');
+  dropdowns.forEach(dropdown => {
+    const trigger = dropdown.querySelector('.dropdown__item');
+    const options = dropdown.querySelector('.dropdown__options');
+    const arrow = dropdown.querySelector('.dropdown__arrow');
+    const icon = dropdown.querySelector('.dropdown__icon img');
+    const textElement = dropdown.querySelector('.dropdown__trigger');
+    trigger.addEventListener('click', e => {
+      e.stopPropagation();
+      const isActive = options.classList.contains('open');
+      document.querySelectorAll('.dropdown__options').forEach(other => {
+        if (other !== options) other.classList.remove('open');
+      });
+      options.classList.toggle('open', !isActive);
+      arrow.classList.toggle('rotated', !isActive);
+    });
+    options.querySelectorAll('.dropdown__option').forEach(option => {
+      option.addEventListener('click', e => {
+        e.stopPropagation();
+        const newText = option.textContent.trim();
+        textElement.textContent = newText;
+        const newIcon = option.querySelector('img');
+        if (icon && newIcon) {
+          icon.src = newIcon.src;
+          icon.alt = newIcon.alt;
+        }
+        options.classList.remove('open');
+        arrow.classList.remove('rotated');
+        dropdown.dispatchEvent(new Event('change'));
+      });
+    });
+  });
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.dropdown')) {
+      document.querySelectorAll('.dropdown__options').forEach(options => {
+        options.classList.remove('open');
+      });
+      document.querySelectorAll('.dropdown__arrow').forEach(arrow => {
+        arrow.classList.remove('rotated');
+      });
+    }
+  });
+};
 
 /***/ }),
 
@@ -826,6 +566,114 @@ const onScrollEvent = () => {
   setTimeout(() => {
     removeLoading();
   }, 1300);
+};
+
+/***/ }),
+
+/***/ "./src/js/functions/rangeInput.js":
+/*!****************************************!*\
+  !*** ./src/js/functions/rangeInput.js ***!
+  \****************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   rangeInput: () => (/* binding */ rangeInput)
+/* harmony export */ });
+const rangeInput = () => {
+  const sliders = document.querySelectorAll('.calculator__block');
+  let intervalId;
+  sliders.forEach(slider => {
+    const rangeInputs = slider.querySelectorAll('.calculator__range-input input');
+    const priceDisplays = slider.querySelectorAll('.quantity__number:not(input)');
+    const incrementButtons = slider.querySelectorAll('.increment');
+    const decrementButtons = slider.querySelectorAll('.decrement');
+    const progress = slider.querySelector('.calculator__range-progress');
+    const priceGap = 500;
+    function updateValues() {
+      let minVal = parseInt(rangeInputs[0].value);
+      let maxVal = parseInt(rangeInputs[1].value);
+      if (maxVal - minVal < priceGap) {
+        if (minVal + priceGap > rangeInputs[1].max) {
+          minVal = maxVal - priceGap;
+        } else {
+          maxVal = minVal + priceGap;
+        }
+      }
+      minVal = Math.max(minVal, parseInt(rangeInputs[0].min));
+      maxVal = Math.min(maxVal, parseInt(rangeInputs[1].max));
+      rangeInputs[0].value = minVal;
+      rangeInputs[1].value = maxVal;
+      priceDisplays[0].textContent = minVal;
+      priceDisplays[1].textContent = maxVal;
+      const leftPercent = minVal / rangeInputs[0].max * 100;
+      const rightPercent = 100 - maxVal / rangeInputs[1].max * 100;
+      progress.style.left = `${leftPercent}%`;
+      progress.style.right = `${rightPercent}%`;
+    }
+    function handleButtonPress(button, callback) {
+      let isPressed = false;
+      const startPress = () => {
+        isPressed = true;
+        callback();
+        intervalId = setInterval(callback, 150);
+      };
+      const stopPress = () => {
+        isPressed = false;
+        clearInterval(intervalId);
+      };
+      button.addEventListener('mousedown', startPress);
+      button.addEventListener('touchstart', startPress);
+      button.addEventListener('mouseup', stopPress);
+      button.addEventListener('touchend', stopPress);
+      button.addEventListener('mouseleave', stopPress);
+    }
+    incrementButtons.forEach((button, index) => {
+      handleButtonPress(button, () => {
+        const input = rangeInputs[index];
+        const oppositeInput = rangeInputs[index === 0 ? 1 : 0];
+        const step = parseInt(input.step) || 100;
+        let newValue = parseInt(input.value) + step;
+        if (index === 0) {
+          newValue = Math.min(newValue, parseInt(oppositeInput.value) - priceGap);
+        } else {
+          newValue = Math.min(newValue, input.max);
+        }
+        input.value = Math.min(newValue, input.max);
+        updateValues();
+      });
+    });
+    decrementButtons.forEach((button, index) => {
+      handleButtonPress(button, () => {
+        const input = rangeInputs[index];
+        const oppositeInput = rangeInputs[index === 0 ? 1 : 0];
+        const step = parseInt(input.step) || 100;
+        let newValue = parseInt(input.value) - step;
+        if (index === 0) {
+          newValue = Math.max(newValue, input.min);
+        } else {
+          newValue = Math.max(newValue, parseInt(oppositeInput.value) + priceGap);
+        }
+        input.value = Math.max(newValue, input.min);
+        updateValues();
+      });
+    });
+    rangeInputs.forEach(input => {
+      input.addEventListener('input', () => {
+        let minVal = parseInt(rangeInputs[0].value);
+        let maxVal = parseInt(rangeInputs[1].value);
+        if (maxVal - minVal < priceGap) {
+          if (input === rangeInputs[0]) {
+            rangeInputs[0].value = maxVal - priceGap;
+          } else {
+            rangeInputs[1].value = minVal + priceGap;
+          }
+        }
+        updateValues();
+      });
+    });
+    updateValues();
+  });
 };
 
 /***/ }),
@@ -1928,7 +1776,10 @@ function EffectCards(_ref) {
     setTransition,
     perspective: () => true,
     overwriteParams: () => ({
+      _loopSwapReset: false,
       watchSlidesProgress: true,
+      loopAdditionalSlides: 3,
+      centeredSlides: true,
       virtualTranslate: !swiper.params.cssMode
     })
   });
@@ -5563,7 +5414,7 @@ function Virtual(_ref) {
     }
     return slideEl;
   }
-  function update(force, beforeInit) {
+  function update(force, beforeInit, forceActiveIndex) {
     const {
       slidesPerView,
       slidesPerGroup,
@@ -5588,7 +5439,7 @@ function Virtual(_ref) {
     if (!swiper.params.cssMode) {
       swiper.updateActiveIndex();
     }
-    const activeIndex = swiper.activeIndex || 0;
+    const activeIndex = typeof forceActiveIndex === 'undefined' ? swiper.activeIndex || 0 : forceActiveIndex;
     let offsetProp;
     if (swiper.rtlTranslate) offsetProp = 'right';else offsetProp = swiper.isHorizontal() ? 'left' : 'top';
     let slidesAfter;
@@ -8483,6 +8334,11 @@ function slideTo(index, speed, runCallbacks, internal, initial) {
     }
     return true;
   }
+  const browser = getBrowser();
+  const isSafari = browser.isSafari;
+  if (isVirtual && !initial && isSafari && swiper.isElement) {
+    swiper.virtual.update(false, false, slideIndex);
+  }
   swiper.setTransition(speed);
   swiper.setTranslate(translate);
   swiper.updateActiveIndex(slideIndex);
@@ -8656,8 +8512,9 @@ function slidePrev(speed, runCallbacks, internal) {
   }
   const normalizedTranslate = normalize(translate);
   const normalizedSnapGrid = snapGrid.map(val => normalize(val));
+  const isFreeMode = params.freeMode && params.freeMode.enabled;
   let prevSnap = snapGrid[normalizedSnapGrid.indexOf(normalizedTranslate) - 1];
-  if (typeof prevSnap === 'undefined' && params.cssMode) {
+  if (typeof prevSnap === 'undefined' && (params.cssMode || isFreeMode)) {
     let prevSnapIndex;
     snapGrid.forEach((snap, snapIndex) => {
       if (normalizedTranslate >= snap) {
@@ -8666,7 +8523,7 @@ function slidePrev(speed, runCallbacks, internal) {
       }
     });
     if (typeof prevSnapIndex !== 'undefined') {
-      prevSnap = snapGrid[prevSnapIndex > 0 ? prevSnapIndex - 1 : prevSnapIndex];
+      prevSnap = isFreeMode ? snapGrid[prevSnapIndex] : snapGrid[prevSnapIndex > 0 ? prevSnapIndex - 1 : prevSnapIndex];
     }
   }
   let prevIndex = 0;
@@ -9411,7 +9268,7 @@ function onTouchMove(event) {
   }
   let loopFixed;
   new Date().getTime();
-  if (data.isMoved && data.allowThresholdMove && prevTouchesDirection !== swiper.touchesDirection && isLoop && allowLoopFix && Math.abs(diff) >= 1) {
+  if (params._loopSwapReset !== false && data.isMoved && data.allowThresholdMove && prevTouchesDirection !== swiper.touchesDirection && isLoop && allowLoopFix && Math.abs(diff) >= 1) {
     Object.assign(touches, {
       startX: pageX,
       startY: pageY,
@@ -11308,7 +11165,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_effect_creative_mjs__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./modules/effect-creative.mjs */ "./node_modules/swiper/modules/effect-creative.mjs");
 /* harmony import */ var _modules_effect_cards_mjs__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./modules/effect-cards.mjs */ "./node_modules/swiper/modules/effect-cards.mjs");
 /**
- * Swiper 11.2.1
+ * Swiper 11.2.2
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
@@ -11316,7 +11173,7 @@ __webpack_require__.r(__webpack_exports__);
  *
  * Released under the MIT License
  *
- * Released on: January 10, 2025
+ * Released on: January 31, 2025
  */
 
 
@@ -11417,13 +11274,15 @@ var __webpack_exports__ = {};
   \************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _functions_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_functions.js */ "./src/js/_functions.js");
-/* harmony import */ var _functions_lazyLoad_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./functions/lazyLoad.js */ "./src/js/functions/lazyLoad.js");
-/* harmony import */ var _functions_onAnyClick_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./functions/onAnyClick.js */ "./src/js/functions/onAnyClick.js");
-/* harmony import */ var _functions_onScrollEvent_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./functions/onScrollEvent.js */ "./src/js/functions/onScrollEvent.js");
-/* harmony import */ var _functions_allSwiper_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./functions/allSwiper.js */ "./src/js/functions/allSwiper.js");
-/* harmony import */ var _fancyapps_ui__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fancyapps/ui */ "./node_modules/@fancyapps/ui/dist/index.esm.js");
+/* harmony import */ var _fancyapps_ui__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fancyapps/ui */ "./node_modules/@fancyapps/ui/dist/index.esm.js");
+/* harmony import */ var _functions_lazyLoad_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./functions/lazyLoad.js */ "./src/js/functions/lazyLoad.js");
+/* harmony import */ var _functions_onAnyClick_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./functions/onAnyClick.js */ "./src/js/functions/onAnyClick.js");
+/* harmony import */ var _functions_onScrollEvent_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./functions/onScrollEvent.js */ "./src/js/functions/onScrollEvent.js");
+/* harmony import */ var _functions_allSwiper_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./functions/allSwiper.js */ "./src/js/functions/allSwiper.js");
 /* harmony import */ var _functions_watchBody_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./functions/watchBody.js */ "./src/js/functions/watchBody.js");
 /* harmony import */ var _functions_applyMask_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./functions/applyMask.js */ "./src/js/functions/applyMask.js");
+/* harmony import */ var _functions_rangeInput_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./functions/rangeInput.js */ "./src/js/functions/rangeInput.js");
+/* harmony import */ var _functions_dropdownSelect_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./functions/dropdownSelect.js */ "./src/js/functions/dropdownSelect.js");
 
 
 
@@ -11432,14 +11291,30 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+function togglePreviewActive() {
+  const slides = document.querySelectorAll('.preview__swiper .swiper-slide');
+  slides.forEach(slide => {
+    slide.addEventListener("click", function (e) {
+      slides.forEach(element => {
+        element.classList.remove('active');
+      });
+      slide.classList.add('active');
+    });
+  });
+}
 window.addEventListener('DOMContentLoaded', () => {
-  (0,_functions_onScrollEvent_js__WEBPACK_IMPORTED_MODULE_3__.onScrollEvent)();
-  (0,_functions_onAnyClick_js__WEBPACK_IMPORTED_MODULE_2__.onClickBtn)();
-  (0,_functions_allSwiper_js__WEBPACK_IMPORTED_MODULE_4__.setSwipers)();
-  (0,_functions_lazyLoad_js__WEBPACK_IMPORTED_MODULE_1__.lazyLoad)();
+  (0,_functions_onScrollEvent_js__WEBPACK_IMPORTED_MODULE_4__.onScrollEvent)();
+  (0,_functions_onAnyClick_js__WEBPACK_IMPORTED_MODULE_3__.onClickBtn)();
+  (0,_functions_allSwiper_js__WEBPACK_IMPORTED_MODULE_5__.setSwipers)();
+  (0,_functions_lazyLoad_js__WEBPACK_IMPORTED_MODULE_2__.lazyLoad)();
   (0,_functions_applyMask_js__WEBPACK_IMPORTED_MODULE_7__.applyMask)('.is-phone');
   (0,_functions_watchBody_js__WEBPACK_IMPORTED_MODULE_6__.observeBody)(['no-scrolling', 'is-start', 'loading']);
-  _fancyapps_ui__WEBPACK_IMPORTED_MODULE_5__.Fancybox.bind("[data-fancybox]");
+  togglePreviewActive();
+  (0,_functions_rangeInput_js__WEBPACK_IMPORTED_MODULE_8__.rangeInput)();
+  (0,_functions_dropdownSelect_js__WEBPACK_IMPORTED_MODULE_9__.dropdownSelect)();
+  _fancyapps_ui__WEBPACK_IMPORTED_MODULE_1__.Fancybox.bind("[data-fancybox]");
 });
 })();
 

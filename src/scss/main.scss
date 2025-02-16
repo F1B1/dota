@@ -7,7 +7,16 @@
 @import "keyframes";
 @import "ui";
 
+
 // подключения компонентов страницы
 @import "./components/header";
+@import "./components/burger";
+@import "./components/preview";
+@import "./components/calculator";
+@import "./components/dropdown";
+
+
+
 @import "./components/modals";
 @import "./components/footer";
+

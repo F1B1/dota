@@ -52,6 +52,12 @@ img {
     object-fit: cover;
 }
 
+fieldset{
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
 a {
     font: inherit;
     text-decoration: none;
@@ -150,7 +156,7 @@ p {
         padding: 0 16px;
     }
 
-    @include small-tablet {
+    @include mobile {
         padding: 0 8px;
     }
 }

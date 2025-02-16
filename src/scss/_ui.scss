@@ -28,7 +28,7 @@
 }
 
 .btn-orange{
-    background-color: var(--bg-orange);
+    background-color: var(--text-orange);
     color: var(--bg-primary);
     svg{
         fill{
@@ -40,6 +40,13 @@
 
 
 
+.arrow{
+    fill: none;
+    use{
+        stroke: var(--bg-primary);
+        stroke-width: 2px;
+    }
+}
 
 .input,
 .textarea {
@@ -48,29 +55,20 @@
     input,
     textarea {
         border: 1px solid transparent;
-        border-radius: #{fluid(20px, 32px, 1920px, 2560px)};
-        padding: #{fluid(22px, 37px, 1920px, 2560px)} #{fluid(20px, 32px, 1920px, 2560px)};
+        border-radius: 20px;
+        padding: #{fluid(16px, 20px, 375px, 1600px)};
         width: 100%;
-        font-family: var(--font-family);
-        font-weight: 500;
+        font-weight: 600;
         font-variant-numeric: lining-nums;
-        font-size: #{fluid(20px, 32px, 1920px, 2560px)};
-        line-height: 1.3;
-        letter-spacing: -0.02em;
-        background-color: var(--text-secondary);
+        font-size: 18px;
+        line-height: 1;
+        letter-spacing: -0.01em;
+        background-color: var(--bg-primary);
         transition: border var(--trans);
-
-        @include big-desktop {
-            padding: #{fluid(14px, 22px, 768px, 1600px)} #{fluid(14px, 20px, 768px, 1600px)};
-            font-size: #{fluid(14px, 20px, 768px, 1600px)};
-        }
-
-        @include tablet {
-            border-radius: 8px;
-        }
+        color: var(--text-primary);
 
         &::placeholder {
-            color: var(--text-gray);
+            color: var(--text-gray-light);
             opacity: 1;
         }
 
@@ -80,7 +78,7 @@
 
         &:focus {
             outline: none;
-            border-color: var(--text-primary);
+            border-color: var(--text-gray-light);
         }
     }
 
@@ -113,6 +111,13 @@
     display: flex;
     align-items: center;
     gap: #{fluid(8px, 13px, 1920px, 2560px)};
+    background-color: var(--bg-cards);
+    padding: 16px;
+    border-radius: 20px;
+
+    &:has(input:checked){
+        border-color: var(--text-orange);
+    }
 
     @include mobile {
         gap: 6px;
@@ -125,11 +130,11 @@
 
     &__custom {
         position: relative;
-        flex: 0 0 #{fluid(24px, 32px, 1920px, 2560px)};
-        border: 2px solid var(--text-gray);
+        flex: 0 0 #{fluid(24px, 32px, 375px, 1600px)};
+        background-color: var(--bg-primary);
         border-radius: 8px;
-        width: #{fluid(24px, 32px, 1920px, 2560px)};
-        height: #{fluid(24px, 32px, 1920px, 2560px)};
+        width: #{fluid(24px, 32px, 375px, 1600px)};
+        height: #{fluid(24px, 32px, 375px, 1600px)};
         transition:
             background var(--trans),
             border var(--trans);
@@ -164,20 +169,18 @@
     }
 
     &__text {
-        font-weight: 500;
-        font-size: #{fluid(20px, 32px, 1920px, 2560px)};
-        line-height: 1.3;
-        color: var(--text-gray);
+        font-weight: 600;
+        line-height: 1;
+        font-size: 18px;
+        color: var(--text-primary);
+        font-family: var(--third-family);
         transition: color var(--trans);
 
-        @include big-desktop {
-            font-size: #{fluid(14px, 20px, 768px, 1600px)};
-        }
     }
 
     input:checked ~ &__custom {
-        border-color: var(--text-primary);
-        background-color: var(--text-primary);
+
+        background-color: var(--text-gray);
 
         &::after {
             opacity: 1;
@@ -185,105 +188,73 @@
     }
 
     input:checked ~ &__text {
-        color: var(--text-primary);
+        color: var(--text-orange);
+    }
+
+    input:checked ~ .calculator__percent{
+        color: var(--text-orange);
+        border-color: var(--text-orange);
     }
 }
 
 .quantity-controls {
-    display: none;
+    display: flex;
     align-items:center;
     justify-content: space-between;
-    border-radius: #{fluid(16px, 24px, 1920px, 2560px)};
-    padding: 8px;
-    min-height: #{fluid(60px, 90px, 1920px, 2560px)};
-    background-color: var(--text-secondary);
+    padding: 8px 12px;
+    gap: 8px;
+    background-color: var(--bg-primary);
+
 
     button{
         display: flex;
         align-items: center;
         justify-content:center;
-        border-radius: #{fluid(12px, 18px, 1920px, 2560px)};
-        width: #{fluid(42px, 64px, 1920px, 2560px)};
-        height: #{fluid(42px, 64px, 1920px, 2560px)};
-        font-size: #{fluid(40px, 64px, 1920px, 2560px)};
+        width: #{fluid(42px, 60px, 375px, 1600px)};
+        height: #{fluid(42px, 60px, 375px, 1600px)};
+        font-size: #{fluid(30px, 40px, 375px, 1600px)};
         line-height: 1;
-        color: var(--text-secondary);
-        background-color: rgba(153, 153, 153, 1);
+        color: var(--text-primary);
+        background-color: var(--text-gray); 
         transition: all 0.3s ease 0s;
-
-        @include big-desktop{
-            width: #{fluid(32px, 42px, 375px, 1600px)};
-            height: #{fluid(32px, 42px, 375px, 1600px)};
+        &:hover{
+            background-color: var(--text-gray-light);
         }
 
-        @include small-tablet{
-            border-radius: 8px;
-        }
-    }
-
-    &:hover{
-        button{
-            background-color: var(--text-primary);
-        }
-    }
-
-    &.show{
-        display: flex;
-    }
-
-    @include big-desktop {
-        min-height: #{fluid(48px, 60px, 375px, 1600px)};
     }
 }
 
 .decrement {
     position: relative;
-
-    &::after{
-        content:'';
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        border-radius: 16px;
-        width: #{fluid(14px, 24px, 1920px, 2560px)};
-        height: #{fluid(4px, 6px, 1920px, 2560px)};
-        background-color: var(--text-secondary);
-        transform: translate(-50%, -50%);
-    }
-}
-
-.quantity-display {
-    display: flex;
-    font-weight: 600;
-    line-height: 1;
-    text-transform: uppercase;
-    gap: #{fluid(3px, 7px, 1920px, 2560px)};
 }
 
 .increment {
     position: relative;
+}
 
-    &::after{
-        content:'';
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        border-radius: 16px;
-        width: #{fluid(14px, 24px, 1920px, 2560px)};
-        height: #{fluid(4px, 6px, 1920px, 2560px)};
-        background-color: var(--text-secondary);
-        transform: translate(-50%, -50%);
+.quantity-display {
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    gap: 4px;
+}
+
+.quantity {
+
+    &__text {
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--text-gray-light);
     }
 
-    &::before{
-        content:'';
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        border-radius: 16px;
-        width: #{fluid(14px, 24px, 1920px, 2560px)};
-        height: #{fluid(4px, 6px, 1920px, 2560px)};
-        background-color: var(--text-secondary);
-        transform: translate(-50%, -50%) rotate(90deg);
+    &__number {
+        font-size: #{fluid(18px, 24px, 375px, 1600px)};
+        font-weight: 700;
+        line-height: 1;
+        font-family: var(--third-family);
     }
 }
+
+
+
