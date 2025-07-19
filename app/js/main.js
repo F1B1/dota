@@ -132,37 +132,69 @@ const setSwipers = () => {
   const smallTablet = matchMedia('(max-width: 768px)');
   const tablet = matchMedia('(max-width: 1024px)');
   const minTablet = matchMedia('(min-width: 1023px)');
-
-  // let previweSwiper = new Swiper(".preview__swiper", {
-  //     slidesPerView: 'auto'
-  //   });
-
-  let uniqueSwiper = null;
+  const reviewsSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.reviews__swiper', {
+    slidesPerView: 4.1,
+    spaceBetween: 16,
+    grid: {
+      rows: 2,
+      fill: 'row'
+    },
+    pagination: {
+      el: '.reviews__pagination',
+      clickable: true
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 1
+      },
+      768: {
+        slidesPerView: 2
+      },
+      1024: {
+        slidesPerView: 2.5
+      },
+      1460: {
+        slidesPerView: 3
+      },
+      1600: {
+        slidesPerView: 4.1
+      }
+    }
+  });
+  let previewSwiper = null;
   const startResizeFunc = () => {
     if (tablet.matches) {
-      // lookSwiper = new Swiper('.look__swiper', {
-      //     slidesPerView: 'auto',
-      //     spaceBetween: 4,
-      // });
+      previewSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.preview__swiper', {
+        slidesPerView: 'auto',
+        spaceBetween: 8,
+        pagination: {
+          el: '.preview__pagination',
+          clickable: true
+        }
+      });
     } else {
-      // if (necessitySwiper) {
-      //     necessitySwiper.destroy();
-      //     necessitySwiper = null;
-      // }
+      if (previewSwiper) {
+        previewSwiper.destroy();
+        previewSwiper = null;
+      }
     }
   };
   startResizeFunc();
   tablet.addEventListener('change', () => {
     if (tablet.matches) {
-      // necessitySwiper = new Swiper('.necessity__swiper', {
-      //     slidesPerView: 'auto',
-      //     spaceBetween: 8,
-      // });
+      previewSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.preview__swiper', {
+        slidesPerView: 'auto',
+        spaceBetween: 8,
+        pagination: {
+          el: '.preview__pagination',
+          clickable: true
+        }
+      });
     } else {
-      // if (necessitySwiper) {
-      //     necessitySwiper.destroy();
-      //     necessitySwiper = null;
-      // }
+      if (previewSwiper) {
+        previewSwiper.destroy();
+        previewSwiper = null;
+      }
     }
   });
 };
@@ -253,7 +285,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   dropdownSelect: () => (/* binding */ dropdownSelect)
 /* harmony export */ });
 const dropdownSelect = () => {
-  const dropdowns = document.querySelectorAll('.dropdown');
+  const dropdowns = document.querySelectorAll('.dropdown-rang');
   dropdowns.forEach(dropdown => {
     const trigger = dropdown.querySelector('.dropdown__item');
     const options = dropdown.querySelector('.dropdown__options');
@@ -581,42 +613,80 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   rangeInput: () => (/* binding */ rangeInput)
 /* harmony export */ });
 const rangeInput = () => {
-  const sliders = document.querySelectorAll('.calculator__block');
+  const calculators = document.querySelectorAll('.calculator__calc');
   let intervalId;
-  sliders.forEach(slider => {
-    const rangeInputs = slider.querySelectorAll('.calculator__range-input input');
-    const priceDisplays = slider.querySelectorAll('.quantity__number:not(input)');
-    const incrementButtons = slider.querySelectorAll('.increment');
-    const decrementButtons = slider.querySelectorAll('.decrement');
-    const progress = slider.querySelector('.calculator__range-progress');
-    const priceGap = 500;
+  calculators.forEach(calculator => {
+    const rangeInputs = calculator.querySelectorAll('.calculator__range-input input');
+    const priceDisplays = calculator.querySelectorAll('.quantity__number:not(input)');
+    const progress = calculator.querySelector('.calculator__range-progress');
+    const rankIcons = calculator.querySelectorAll('.dropdown__image img');
+    const rankTexts = calculator.querySelectorAll('.dropdown__trigger');
+    const isMMR = calculator.closest('.calculator-mmr');
+    const priceGap = isMMR ? 20 : 500;
+    const ranksData = getRanksData(calculator);
+    function getRanksData(calculator) {
+      return [...calculator.querySelectorAll('.dropdown__option')].map(option => {
+        const mmr = parseInt(option.getAttribute('data-mmr'));
+        const name = option.textContent.trim();
+        const image = option.querySelector('img')?.src || '';
+        return !isNaN(mmr) ? {
+          mmr,
+          name,
+          image
+        } : null;
+      }).filter(Boolean);
+    }
+    function getRank(mmr) {
+      return ranksData.slice().reverse().find(rank => mmr >= rank.mmr) || {
+        mmr: 0,
+        name: 'Ранг не найден',
+        image: ''
+      };
+    }
     function updateValues() {
       let minVal = parseInt(rangeInputs[0].value);
       let maxVal = parseInt(rangeInputs[1].value);
       if (maxVal - minVal < priceGap) {
-        if (minVal + priceGap > rangeInputs[1].max) {
-          minVal = maxVal - priceGap;
-        } else {
-          maxVal = minVal + priceGap;
-        }
+        minVal = Math.max(minVal, maxVal - priceGap);
+        maxVal = Math.min(maxVal, minVal + priceGap);
       }
-      minVal = Math.max(minVal, parseInt(rangeInputs[0].min));
-      maxVal = Math.min(maxVal, parseInt(rangeInputs[1].max));
       rangeInputs[0].value = minVal;
       rangeInputs[1].value = maxVal;
       priceDisplays[0].textContent = minVal;
       priceDisplays[1].textContent = maxVal;
-      const leftPercent = minVal / rangeInputs[0].max * 100;
-      const rightPercent = 100 - maxVal / rangeInputs[1].max * 100;
-      progress.style.left = `${leftPercent}%`;
-      progress.style.right = `${rightPercent}%`;
+      progress.style.left = `${minVal / rangeInputs[0].max * 100}%`;
+      progress.style.right = `${100 - maxVal / rangeInputs[1].max * 100}%`;
+      updateRankIcons(minVal, maxVal);
     }
-    function handleButtonPress(button, callback) {
+    function updateRankIcons(minVal, maxVal) {
+      const currentRankMin = getRank(minVal);
+      const currentRankMax = getRank(maxVal);
+      if (rankIcons[0]) rankIcons[0].src = currentRankMin.image;
+      if (rankTexts[0]) rankTexts[0].textContent = currentRankMin.name;
+      if (rankIcons[1]) rankIcons[1].src = currentRankMax.image;
+      if (rankTexts[1]) rankTexts[1].textContent = currentRankMax.name;
+    }
+    function handleButtonPress(button, index, isIncrement) {
       let isPressed = false;
+      const step = parseInt(rangeInputs[index].step) || (isMMR ? 20 : 100);
+      const adjustValue = () => {
+        const input = rangeInputs[index];
+        const oppositeInput = rangeInputs[index === 0 ? 1 : 0];
+        let newValue = parseInt(input.value) + (isIncrement ? step : -step);
+        if (index === 0) {
+          newValue = Math.max(newValue, input.min);
+          newValue = Math.min(newValue, parseInt(oppositeInput.value) - priceGap);
+        } else {
+          newValue = Math.min(newValue, input.max);
+          newValue = Math.max(newValue, parseInt(oppositeInput.value) + priceGap);
+        }
+        input.value = newValue;
+        updateValues();
+      };
       const startPress = () => {
         isPressed = true;
-        callback();
-        intervalId = setInterval(callback, 150);
+        adjustValue();
+        intervalId = setInterval(adjustValue, 150);
       };
       const stopPress = () => {
         isPressed = false;
@@ -628,36 +698,8 @@ const rangeInput = () => {
       button.addEventListener('touchend', stopPress);
       button.addEventListener('mouseleave', stopPress);
     }
-    incrementButtons.forEach((button, index) => {
-      handleButtonPress(button, () => {
-        const input = rangeInputs[index];
-        const oppositeInput = rangeInputs[index === 0 ? 1 : 0];
-        const step = parseInt(input.step) || 100;
-        let newValue = parseInt(input.value) + step;
-        if (index === 0) {
-          newValue = Math.min(newValue, parseInt(oppositeInput.value) - priceGap);
-        } else {
-          newValue = Math.min(newValue, input.max);
-        }
-        input.value = Math.min(newValue, input.max);
-        updateValues();
-      });
-    });
-    decrementButtons.forEach((button, index) => {
-      handleButtonPress(button, () => {
-        const input = rangeInputs[index];
-        const oppositeInput = rangeInputs[index === 0 ? 1 : 0];
-        const step = parseInt(input.step) || 100;
-        let newValue = parseInt(input.value) - step;
-        if (index === 0) {
-          newValue = Math.max(newValue, input.min);
-        } else {
-          newValue = Math.max(newValue, parseInt(oppositeInput.value) + priceGap);
-        }
-        input.value = Math.max(newValue, input.min);
-        updateValues();
-      });
-    });
+    calculator.querySelectorAll('.increment').forEach((button, index) => handleButtonPress(button, index, true));
+    calculator.querySelectorAll('.decrement').forEach((button, index) => handleButtonPress(button, index, false));
     rangeInputs.forEach(input => {
       input.addEventListener('input', () => {
         let minVal = parseInt(rangeInputs[0].value);
@@ -11311,10 +11353,17 @@ window.addEventListener('DOMContentLoaded', () => {
   (0,_functions_lazyLoad_js__WEBPACK_IMPORTED_MODULE_2__.lazyLoad)();
   (0,_functions_applyMask_js__WEBPACK_IMPORTED_MODULE_7__.applyMask)('.is-phone');
   (0,_functions_watchBody_js__WEBPACK_IMPORTED_MODULE_6__.observeBody)(['no-scrolling', 'is-start', 'loading']);
-  togglePreviewActive();
   (0,_functions_rangeInput_js__WEBPACK_IMPORTED_MODULE_8__.rangeInput)();
   (0,_functions_dropdownSelect_js__WEBPACK_IMPORTED_MODULE_9__.dropdownSelect)();
   _fancyapps_ui__WEBPACK_IMPORTED_MODULE_1__.Fancybox.bind("[data-fancybox]");
+  if (innerWidth > 1024) {
+    togglePreviewActive();
+  }
+  window.addEventListener('resize', () => {
+    if (innerWidth > 1024) {
+      togglePreviewActive();
+    }
+  });
 });
 })();
 

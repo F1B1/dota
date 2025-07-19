@@ -1,0 +1,63 @@
+.blog {
+
+    &__container {
+    }
+
+    &__header {
+    }
+
+    &__columns {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        @include tablet{
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include mobile{
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__column {
+        overflow: hidden;
+        position: relative;
+        min-height: 280px;
+        display: flex;
+        flex-direction: column;
+        border-radius: #{fluid(20px, 40px, 375px, 1600px)};
+        @include mobile{
+            min-height: 233px;
+        }
+    }
+
+    &__content {
+        position: relative;
+        z-index: 1;
+        padding: 36px 48px;
+        margin-top: auto;
+        @include small-tablet{
+            padding: 36px #{fluid(16px, 48px, 375px, 768px)};
+        }
+    }
+
+    &__date {
+        letter-spacing: 0;
+        color: rgba($color: #fff, $alpha: .7);
+        margin-bottom: 10px;
+    }
+
+    &__caption {
+    }
+
+    &__image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}

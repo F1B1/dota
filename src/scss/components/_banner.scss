@@ -1,0 +1,50 @@
+.banner {
+
+    background-color: var(--text-orange);
+    margin-bottom: 0;
+    padding: #{fluid(24px, 48px, 375px, 1600px)} #{fluid(16px, 48px, 375px, 1600px)};;
+
+    &__body {
+        display: flex;
+        align-items:center;
+        justify-content: space-between;
+        gap: #{fluid(24px, 48px, 1024px, 1600px)};
+        @include tablet{
+            flex-direction: column;
+        }
+    }
+
+    &__content {
+        color: var(--bg-primary);
+        @include tablet{
+            text-align: center;
+        }
+    }
+
+    &__title {
+        margin-bottom: 10px;
+    }
+
+    &__text {
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    &__button {
+        flex: 0 0 346px;
+        font-family: var(--third-family);
+        gap: 10px;
+        min-height: #{fluid(64px, 86px, 375px, 1600px)};
+        svg{
+            fill: var(--text-primary);
+        }
+        @include tablet{
+            flex: 0 1 100%;
+            width: 100%;
+        }
+        @include small-tablet{
+            font-size: 16px;
+        }
+    }
+
+}

@@ -30,10 +30,14 @@
 .btn-orange{
     background-color: var(--text-orange);
     color: var(--bg-primary);
+    transition: all 0.3s ease 0s;
     svg{
         fill{
             color: var(--bg-primary);
         }
+    }
+    &:hover{
+        background-color: var(--text-orange-hover);
     }
 }
 
@@ -42,6 +46,7 @@
 
 .arrow{
     fill: none;
+    transform: rotate(-90deg);
     use{
         stroke: var(--bg-primary);
         stroke-width: 2px;
@@ -114,9 +119,17 @@
     background-color: var(--bg-cards);
     padding: 16px;
     border-radius: 20px;
+    transition: all 0.3s ease 0s;
 
     &:has(input:checked){
         border-color: var(--text-orange);
+    }
+
+    &:hover{
+        background-color: var(--text-gray);
+        .checkbox__custom{
+            background-color: var(--bg-primary);
+        }
     }
 
     @include mobile {
@@ -156,8 +169,8 @@
             position: absolute;
             left: 50%;
             top: 50%;
-            width: 80%;
-            height: 80%;
+            width: 60%;
+            height: 60%;
             background-image: url('../img/check.svg');
             background-position: center;
             background-size: contain;
@@ -246,6 +259,7 @@
         font-size: 12px;
         font-weight: 500;
         color: var(--text-gray-light);
+        text-align: center;
     }
 
     &__number {
@@ -256,5 +270,29 @@
     }
 }
 
+.card{
+    position: relative;
+    background-color: var(--bg-cards);
+    overflow: hidden;
+}
 
+.pd-rang{
+    padding-left: #{fluid(60px, 90px, 768px, 1600px)};
+    @include small-tablet{
+        padding-left: 80px;
+    }
+}
 
+.button-contact{
+    color: var(--bg-primary);
+    background: linear-gradient(90deg, rgba(255,199,0,1) 0%, rgba(170,255,54,1) 100%);
+    min-height: 68px;
+    width: #{fluid(240px, 300px, 1024px, 1600px)};
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    z-index: 10;
+    @include tablet{
+        display: none;
+    }
+}

@@ -1,5 +1,5 @@
 export const dropdownSelect = ()=>{
-    const dropdowns = document.querySelectorAll('.dropdown');
+    const dropdowns = document.querySelectorAll('.dropdown-rang');
     
     dropdowns.forEach(dropdown => {
         const trigger = dropdown.querySelector('.dropdown__item');

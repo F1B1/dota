@@ -1,0 +1,121 @@
+.footer {
+
+    &__container {
+        background-color: var(--bg-cards);
+        margin: 0 var(--container-offset);
+        @include big-desktop{
+            margin: 0;
+        }
+    }
+
+    &__wrapper{
+        padding: 64px 0 22px 0;
+    }
+
+    &__inner{
+
+    }
+
+
+    &__body {
+        display: flex;
+        @include small-tablet{
+            flex-direction: column;
+            row-gap: #{fluid(32px, 64px, 375px, 768px)};
+        }
+    }
+
+    &__action {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        @include small-tablet{
+            flex-direction: row;
+            justify-content: center;
+        }
+    }
+
+    &__image {
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        border-radius: 50%;
+        width: 48px;
+        height: 48px;
+        background-color: var(--bg-primary);
+        svg{
+            fill: var(--text-primary);
+        }
+    }
+
+    &__logo {
+        background-color: unset;
+    }
+
+    &__columns{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 24px;
+        row-gap: #{fluid(32px, 64px, 375px, 768px)};
+        width: 100%;
+        padding-left: #{fluid(48px, 140px, 768px, 1600px)};
+        padding-right: #{fluid(0px, 140px, 768px, 1600px)};
+        @include small-tablet{
+            grid-template-columns: repeat(2,1fr);
+            padding: 0 24px;
+        }
+        @include mobile{
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__column {
+        
+    }
+
+    &__caption {
+        margin-bottom: 24px;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    &__item {
+    }
+
+    &__link {
+        color: var(--text-primary);
+        font-weight: 600;
+        transition: all 0.3s ease 0s;
+        @media (any-hover: hover){
+            color: var(--text-gray-light);
+            &:hover{
+                color: var(--text-primary);
+            }
+        }
+    }
+
+    &__payment{
+        display: flex;
+        align-items:center;
+        justify-content: flex-end;
+        gap: 16px;
+        margin-bottom: 64px;
+    }
+
+    &__term{
+        max-width: 1076px;
+        margin-left: auto;
+        p{
+            color: var(--text-gray-light);
+            font-family: var(--second-family);
+            font-size: 12px;
+            letter-spacing: -0.035em;
+            &:not(:last-child) {margin-bottom: 10px;};
+        }
+    }
+    
+}

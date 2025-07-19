@@ -4,46 +4,81 @@
     }
 
     &__swiper {
-        border-radius: 80px;
-        overflow: hidden;
+
+        .swiper-wrapper{
+            @include tablet{
+                margin-bottom: #{fluid(24px, 32px, 375px, 1024px)};
+            }
+        }
 
         .swiper-slide{
             overflow: hidden;
+            display: flex;
             border-radius: 80px;
-            width: 25%;
-            flex: unset;
             height: unset;
-            min-height: 735px;
-            transition: all 0.3s ease 0s;
+            min-height: #{fluid(443px, 745px, 375px, 1024px)};
             cursor: pointer;
-            &:not(:first-child){
-                margin-left: -150px;
-            }
-            &:last-child{
-                width: 15%;
-            }
-            &.active{
-                width: 80%;
-                .preview__content{
-                    display: block;
+            @media (min-width: 1024.98px) {
+                width: 25%;
+                flex: unset;
+                transition: all 0.5s ease 0s;
+                &:not(:first-child){
+                    margin-left: -150px;
+                }
+                &:last-child{
+                    width: 15%;
+                }
+                &.active{
+                    width: 80%;
+                    .preview__content{
+                       opacity: 1;
+                       visibility: visible;
+                    }
                 }
             }
+            @include tablet{
+                border-radius: 40px;
+                width: 100%;
+                &.active{
+                    width: 100%;
+                }
+            }
+        }
+
+    }
+
+    &__pagination{
+        display: none;
+        .swiper-pagination-bullet{
+            background: var(--text-gray-light);
+            width: 16px;
+            height: 16px;
+            margin: 0 !important;
+        }
+        .swiper-pagination-bullet-active{
+            background: var(--text-orange);
+        }
+        @include tablet{
+            display: flex;
         }
     }
 
     &__content {
-        position: absolute;
-        top: 0;
-        left: 0;
-        padding: 64px 0 0 64px;
         max-width: 564px;
-        display: none;
+        padding: #{fluid(24px, 64px, 375px, 1024px)} 0 0 #{fluid(24px, 64px, 375px, 1024px)};
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s ease 0s;
+        @include tablet{
+            opacity: 1;
+            visibility: visible;
+        }
     }
 
     &__character {
         display: flex;
         align-items:center;
-        padding-bottom: 112px;
+        padding-bottom: #{fluid(32px, 112px, 375px, 1024px)};
         position: relative;
     }
 
@@ -65,7 +100,7 @@
     }
 
     &__title {
-        font-size: 72px;
+        font-size: #{fluid(32px, 72px, 375px, 1024px)};
         line-height: 1;
         margin-bottom: 32px;
     }
@@ -78,6 +113,7 @@
     &__button {
         min-height: 64px;
         width: 251px;
+        gap: 8px;
         svg{
             fill: var(--bg-primary);
         }
@@ -85,11 +121,24 @@
 
     &__image {
         display: flex;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
         height: 100%;
+        z-index: -1;
         img{
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+        &::after{
+            content:'';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            inset: 0;
+            background: var(--bg-cards-20);
         }
     }
 }

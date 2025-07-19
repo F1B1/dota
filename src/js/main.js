@@ -34,13 +34,20 @@ window.addEventListener('DOMContentLoaded', () => {
   lazyLoad();
   applyMask('.is-phone');
   observeBody(['no-scrolling', 'is-start', 'loading']);
-  togglePreviewActive()
   rangeInput()
   dropdownSelect()
 
   Fancybox.bind("[data-fancybox]");
 
-  
+  if(innerWidth > 1024){
+    togglePreviewActive()
+  }
+
+  window.addEventListener('resize',()=>{
+    if(innerWidth > 1024){
+      togglePreviewActive()
+    }
+  })
 
 });
 

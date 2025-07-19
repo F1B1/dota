@@ -9,11 +9,20 @@
 
 
 // подключения компонентов страницы
+
+@import "./components/banner";
+
 @import "./components/header";
 @import "./components/burger";
 @import "./components/preview";
 @import "./components/calculator";
 @import "./components/dropdown";
+@import "./components/reviews";
+@import "./components/about";
+@import "./components/advantage";
+@import "./components/blog";
+@import "./components/question";
+
 
 
 

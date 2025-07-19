@@ -3,7 +3,6 @@
     padding-top: 84px;
 
     &__container {
-        max-width: 1280px;
     }
 
     &__header {
@@ -20,11 +19,11 @@
 
     &__title {
         max-width: 590px;
-        text-align: center;
         span{
             color: #AAFF36;
         }
         @include mobile{
+            text-align: center;
             display: flex;
             flex-direction: column;
         }
@@ -76,8 +75,12 @@
     }
 
     &__form {
+        display: none;
         background-color: var(--bg-cards);
         padding: #{fluid(24px, 48px, 375px, 1600px)} #{fluid(8px, 48px, 375px, 1600px)};
+        &.show{
+            display: block;
+        }
         @include small-tablet{
             border-radius: 20px;
         }
@@ -100,14 +103,17 @@
         }
     }
 
-    &__block {
+    &__calc {
         display: grid;
         align-items:center;
-        grid-template-columns: repeat(3,1fr);
+        grid-template-columns: 1fr 2fr 1fr;
         margin-bottom: 4px;
         gap: 4px;
         &.mb16{
             margin-bottom: 16px;
+        }
+        @include tablet{
+            grid-template-columns: repeat(3, 1fr);
         }
         @include small-tablet{
             grid-template-columns: repeat(2,1fr);
@@ -197,24 +203,24 @@
     &__checkboxes {
         background-color: var(--bg-primary);
         padding: 15px;
-        display: flex;
+        display: grid;
         align-items:center;
         gap: 10px;
         margin-bottom: 24px;
+        grid-template-columns: repeat(3, 1fr);
+        @include tablet{
+            grid-template-columns: repeat(2, 1fr);
+        }
         @include small-tablet{
-            flex-direction: column;
+            grid-template-columns: 1fr;
         }
     }
 
     &__input {
-        flex: 1 1 auto;
         border: 2px solid transparent;
         cursor: pointer;
         transition: all 0.3s ease 0s;
-        @include small-tablet{
-            width: 100%;
-            
-        }
+
     }
 
     &__percent {
@@ -347,6 +353,52 @@
         padding: 15px 36px;
     }
 
+}
 
-
+.calculator-mmr{
+    .calculator__calc{
+        display: flex;
+        flex-direction: column;
+    }
+    .calculator__rang{
+        width: 100%;
+        display: grid;
+        gap: 8px;
+        grid-template-columns: 1fr 2fr 1fr;
+        @include small-tablet{
+            grid-template-columns: repeat(2, 1fr);
+            .dropdown:last-child{
+                grid-area: 1/2;
+            }
+        }
+        @include mobile{
+            grid-template-columns: 1fr;
+            .dropdown:last-child{
+                grid-area: 2 / 1;
+            }
+        }
+    }
+    .calculator__info{
+        width: 100%;
+        display: grid;
+        gap: 8px;
+        grid-template-columns: repeat(4, auto);
+        
+        @include tablet{
+            grid-template-columns: repeat(2, 1fr);
+            .calculator__quantity:last-child{
+                grid-area: 1 / 2;
+            }
+        }
+        @include mobile{
+            grid-template-columns: 1fr;
+            .calculator__quantity:last-child{
+                grid-area: 2 / 1;
+            }
+        }
+    }
+    
+    .dropdown__block{
+        
+    }
 }

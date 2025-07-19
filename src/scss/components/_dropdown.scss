@@ -3,6 +3,20 @@
     border-radius: 20px;
     padding: 15px #{fluid(24px, 36px, 768px, 1600px)};
     position: relative;
+
+    &.show{
+        .dropdown__options{
+            display: block;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .dropdown__arrow{
+            transform: rotate(0);
+        }
+    }
+
+
     &__item {
         display: flex;
         align-items:center;
@@ -10,7 +24,7 @@
         cursor: pointer;
     }
 
-    &__icon {
+    &__icon, &__image {
         position: absolute;
         left: 0;
         top: 50%;
@@ -42,9 +56,14 @@
     }
 
     &__arrow {
-        
+        transition: all 0.3s ease 0s;
+
         use{
             stroke: var(--text-primary);
+        }
+
+        &.rotated{
+            transform: rotate(0);
         }
     }
 
@@ -103,11 +122,3 @@
 
 }
 
-.dropdown-rang{
-    .dropdown__block{
-        padding-left: #{fluid(60px, 90px, 768px, 1600px)};
-        @include small-tablet{
-            padding-left: 80px;
-        }
-    }
-}
